@@ -3,17 +3,16 @@ package entities;
 import java.util.Objects;
 
 public class Product {
-	
-	
+
 	private String name;
 	private Double price;
-	
+
 	public Product() {
-	
+
 	}
 
 	public Product(String name, Double price) {
-		
+
 		this.name = name;
 		this.price = price;
 	}
@@ -55,10 +54,13 @@ public class Product {
 		Product other = (Product) obj;
 		return Objects.equals(name, other.name) && Objects.equals(price, other.price);
 	}
-	
-	
-	public static boolean staticProductPredicate(Product p) {
-		return p.getPrice()>=100;
+
+	public static boolean staticProductPredicate(Product p) {//trabalha com argumento
+		return p.getPrice() >= 100;
+	}
+
+	public boolean nonStaticProductPredicate() {//nao usa argumento
+		return price >= 100;
 	}
 
 }
